@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+    <h3 style="margin: 0;">{{ game.title }}</h3>
+
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="badge">{{ game.progressState }}</span>
+
+      <button (click)="onDelete()" style="background: none; border: none; color: #ff4d4d; font-size: 1.8rem; cursor: pointer; padding: 0; line-height: 1;" title="Eliminar juego">
+        &times;
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p class="category" style="color: #aaa; margin-top: 5px;">{{ game.category }}</p>
+    <p class="description">{{ game.description }}</p>
+  </div>
+</div>

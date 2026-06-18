@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+body {
+  /* Usamos un negro suave (#121212) para descansar la vista */
+  background-color: #121212;
+
+  /* Asegura que el texto fuera de las tarjetas sea blanco */
+  color: #ffffff;
+
+  /* Quita los bordes blancos por defecto del navegador */
+  margin: 0;
+
+  /* Fuente más limpia y moderna */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
