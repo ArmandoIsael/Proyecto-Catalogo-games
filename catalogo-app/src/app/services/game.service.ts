@@ -51,10 +51,9 @@ export class GameService {
     localStorage.setItem(this.storageKey, JSON.stringify(games));
   }
 
-  // --- NUEVA FUNCIÓN PARA ELIMINAR ---
   deleteGame(id: string): void {
     const games = this.getGames();
-    // Filtramos la lista para guardar todos EXCEPTO el que tenga el ID que queremos borrar
+
     const updatedGames = games.filter(game => game.id !== id);
     localStorage.setItem(this.storageKey, JSON.stringify(updatedGames));
   }

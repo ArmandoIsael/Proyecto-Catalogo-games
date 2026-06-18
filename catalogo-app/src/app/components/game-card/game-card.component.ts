@@ -12,10 +12,8 @@ import { Game } from '../../models/game.model';
 export class GameCardComponent {
   @Input() game!: Game;
 
-  // Esto es lo que faltaba: El emisor de eventos que envía texto (string)
   @Output() deleteGameEvent = new EventEmitter<string>();
 
-  // Esta es la función que se dispara al presionar la 'X'
   onDelete() {
     this.deleteGameEvent.emit(this.game.id);
   }

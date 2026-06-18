@@ -10,7 +10,7 @@ export const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate: [authGuard], // <-- ¡AQUÍ ESTÁ EL CADENERO PROTEGIENDO EL CATÁLOGO!
+    canActivate: [authGuard], 
     children: [
       { path: 'catalog', component: CatalogComponent },
       { path: '', redirectTo: 'catalog', pathMatch: 'full' }

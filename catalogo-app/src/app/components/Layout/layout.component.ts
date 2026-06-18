@@ -13,18 +13,18 @@ export class LayoutComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  // Esto se ejecuta en cuanto aparece la barra superior
+
   ngOnInit() {
-    // Busca tu nombre guardado, o pone 'Usuario' por defecto
+    
     this.username = localStorage.getItem('savedUsername') || 'Usuario';
   }
 
   onLogout() {
-    // 1. Destruimos las llaves de seguridad
+
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('savedUsername');
 
-    // 2. Te mandamos de regreso a la calle (al Login)
+
     this.router.navigate(['/login']);
   }
 }

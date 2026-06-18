@@ -13,10 +13,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class CatalogComponent implements OnInit {
 
-  // 1. Tu lista principal de juegos
   myGames: Game[] = [];
 
-  // 2. Tu molde para el formulario de agregar
   newGame: Game = {
     id: '',
     title: '',
@@ -25,7 +23,6 @@ export class CatalogComponent implements OnInit {
     progressState: 'Pendiente'
   };
 
-  // --- AQUÍ VA LO DEL BUSCADOR ---
   searchText: string = '';
 
   get filteredGames(): Game[] {
@@ -34,7 +31,6 @@ export class CatalogComponent implements OnInit {
       game.category.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }
-  // -------------------------------
 
   constructor(private gameService: GameService) {}
 
@@ -50,7 +46,6 @@ export class CatalogComponent implements OnInit {
 
     this.myGames = this.gameService.getGames();
 
-    // Aquí cerramos correctamente la limpieza del formulario
     this.newGame = {
       id: '',
       title: '',
@@ -60,12 +55,12 @@ export class CatalogComponent implements OnInit {
     };
   }
 
-  // --- FUNCIÓN PARA BORRAR YA SEPARADA ---
+
   onDeleteGame(id: string) {
-    // 1. Le decimos al servicio que lo borre de los datos guardados
+
     this.gameService.deleteGame(id);
 
-    // 2. Refrescamos la lista en pantalla para que la tarjeta desaparezca al instante
+  
     this.myGames = this.gameService.getGames();
   }
 

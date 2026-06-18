@@ -17,14 +17,11 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onLogin() {
-    // Verificamos si la contraseña es correcta
     if (this.username && this.password === 'cesun123') {
 
-      // 1. Guardamos la "llave" y tu nombre en la memoria del navegador
       localStorage.setItem('isAuthenticated', 'true');
       localStorage.setItem('savedUsername', this.username);
 
-      // 2. Te dejamos pasar al catálogo
       this.router.navigate(['/catalog']);
 
     } else {
